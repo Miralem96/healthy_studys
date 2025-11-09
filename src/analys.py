@@ -19,3 +19,24 @@ def simulate_disease_probability(df, n=1000, seed=42):
     p = df['disease'].mean()
     simulations = np.random.binomial(1, p, n)
     return simulations.mean(), p
+
+def plot_histograms(df):
+    # Ett histogram för nummeriska variabler 
+
+    df[['age','height','weight','systolic_bp','cholesterol']].hist(figsize=(12,8))
+    plt.tight_layout()
+    plt.show()
+
+def plot_boxplot(df, column):
+    # En boxplot för vald kolumn.
+
+    plt.boxplot(x=df[column])
+    plt.title(f"Boxplot: {column}")
+    plt.show()
+
+def plot_smoker_bar(df):
+    # Stapeldiagram över rökare och icke rökare
+
+    df['smoker'].value_counts().plot(kind='bar')
+    plt.title("Andel rökare vs icke-rökare")
+    plt.show()
