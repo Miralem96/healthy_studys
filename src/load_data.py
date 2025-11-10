@@ -1,5 +1,5 @@
 import pandas as pd
 
 # Laddar ner data från csv filen
-def load_data(filepath: str) -> pd.DataFrame:
-    return pd.read_csv(filepath)
+def load_data(path: str) -> pd.DataFrame:
+    return pd.read_csv(path)
