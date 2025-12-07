@@ -49,7 +49,7 @@ def hypothesis_test_smokers_higher_bp(df, n_perm=5000, seed=42):
     for _ in range(n_perm):
         np.random.shuffle(all_values)
         sm_fake = all_values[:len(sm)]
-        ns_fake = all_values[:len(sm)]
+        ns_fake = all_values[len(sm):]
         diff_perm.append(sm_fake.mean() - ns_fake.mean())
 
     diff_perm = np.array(diff_perm)
